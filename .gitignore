@@ -1,0 +1,11 @@
+/.vagrant
+/.idea/
+/tempDir/
+.idea/
+Vagrantfile
+bootstrap.sh
+dotscreenrc
+/node_modules/
+/tmp-10467gsH3oUtzWtpe/
+/src/build/
+
