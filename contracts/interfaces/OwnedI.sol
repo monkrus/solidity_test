@@ -1,55 +1,47 @@
+/*
+1) Modifier fromOwner
+2) Defined what is owned
+3) Sets owner
+3) Gets/read owner
+*/
+
 pragma solidity ^0.5.1;
 
-contract MultiplierHolderI {
+import "./interfaces/OwnedI.sol";
 
-    /**
-     * Event emitted when a new multiplier has been set.
-     * @param sender The account that ran the action.
-     * @param vehicleType The type of vehicle for which the multiplier was set.
-     * @param multiplier The actual multiplier set.
-     */
-    event LogMultiplierSet(
-        address indexed sender,
-        uint indexed vehicleType,
-        uint multiplier);
 
-    /**
-     * Called by the owner of the MultiplierHolder.
-     *     Can be used to update a value.
-     *     It should roll back if the caller is not the owner of the contract.
-     *     It should roll back if the vehicle type is 0.
-     *     Setting the multiplier to 0 is equivalent to removing it and is an acceptable action.
-     *     It should roll back if the same multiplier is already set to the vehicle type.
-     * @param vehicleType The type of the vehicle being set.
-     * @param multiplier The multiplier to use.
-     * @return Whether the action was successful.
-     * Emits LogMultiplierSet with:
-     *     The sender of the action.
-     *     The vehicle type that was modified.
-     *     The new multiplier that was set.
-     */
-    function setMultiplier(
-            uint vehicleType,
-            uint multiplier)
-        public
-        returns(bool success);
+contract Owned is OwnedI {
 
-    /**
-     * @param vehicleType The type of vehicle whose multiplier we want
-     *     It should accept a vehicle type equal to 0.
-     * @return The multiplier for this vehicle type.
-     *     A 0 value indicates a non-existent multiplier.
-     */
-    function getMultiplier(uint vehicleType)
-        view
-        public
-        returns(uint multiplier);
+  address currOwner;
 
-    /*
-     * You need to create:
-     *
-     * - a contract named `MultiplierHolder` that:
-     *     - is `OwnedI` and `MultiplierHolderI`.
-     *     - has a constructor that takes no parameter.
-     */        
+  modifier fromOwner {
+    require(msg.sender == currOwner);
+    _;
+  }
+
+  function Owned() public {
+    currOwner = msg.sender;
+  }
+
+  function setOwner(address newOwner)
+  fromOwner
+  public
+  returns (bool success)
+  {
+    require(newOwner != 0);
+    require(newOwner != currOwner);
+    emit LogOwnerSet(currOwner, newOwner);
+    currOwner = newOwner;
+    return true;
+  }
+
+
+  //Starting with solc 0.4.17, constant is depricated in favor of two new and more specific modifiers.
+  function getOwner()
+  view
+  public
+  returns (address owner)
+  {
+    return currOwner;
+  }
 }

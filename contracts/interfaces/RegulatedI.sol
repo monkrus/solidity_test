@@ -1,3 +1,10 @@
+/*
+1) Logs regulator set event
+2) Sets regulator
+3) Gets/read regulator
+
+*/
+
 pragma solidity ^0.5.1;
 
 import "./RegulatorI.sol";

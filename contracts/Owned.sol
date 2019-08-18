@@ -1,3 +1,11 @@
+/*
+1) Modifier fromOwner
+2) Defined what is owned
+3) Sets owner
+3) Gets/read owner
+*/
+
+
 pragma solidity ^0.5.1;
 
 import "./interfaces/OwnedI.sol";
@@ -31,7 +39,7 @@ contract Owned is OwnedI {
 
   //Starting with solc 0.4.17, constant is depricated in favor of two new and more specific modifiers.
   function getOwner()
- view
+  view
   public
   returns (address owner)
   {

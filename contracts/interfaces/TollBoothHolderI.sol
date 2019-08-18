@@ -1,3 +1,12 @@
+/*
+1) Logs toll booth added event
+2) Adds toll booth
+3) Defines tollbooth
+4) Logs toll booth removed event
+5) Removes toll booth
+*/
+
+
 pragma solidity ^0.5.1;
 
 contract TollBoothHolderI {

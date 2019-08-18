@@ -1,3 +1,16 @@
+/* The regulator
+   1) Only owner
+   2) Sets vehicle type ???
+   3) Gets/reads vehicle type
+
+   4) Creates and removes tollbooth operator
+   5) Reads/tests who is  current operator 
+
+
+*/
+
+
+
 pragma solidity ^0.5.1;
 
 import "./Owned.sol";
@@ -55,4 +68,3 @@ contract Regulator is RegulatorI, Owned {
   }
 
 }
-© 2019 GitHub, Inc.

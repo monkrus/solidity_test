@@ -1,3 +1,9 @@
+/*
+1) Logs deposit set event
+2) Sets deposit
+3) Gets/read deposit
+*/
+
 pragma solidity ^0.5.1;
 
 contract DepositHolderI {

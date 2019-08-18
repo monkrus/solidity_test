@@ -1,3 +1,19 @@
+/*
+1)TollBoothOperator
+2)hashSecret
+3)enterRoad
+4)emit LogRoadEntered
+5)reportExitRoad
+6)emit LogRoadExited
+7)clearSomePendingPayments
+8)withdrawCollectedFees
+9)setRoutePrice
+10)getVehicleEntry
+11)getPendingPaymentCount
+12)getCollectedFeesAmount
+*/
+
+
 pragma solidity ^0.5.1;
 import "./Owned.sol";
 import "./Pausable.sol";

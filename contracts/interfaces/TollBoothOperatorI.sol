@@ -1,3 +1,20 @@
+/*
+1) Hash secret- called by vehicle prior to sending a deposit.
+Called by contract when submitted a clear password by a toll booth
+2) Logs road entered-when a vehicle made a deposit
+3) Enter road-called by a vehicle when entering the road
+4) GetVehicleEntry-hashed secred used by vehicle when entering the road
+5) Logs RoadExited- event when vehicle exits road
+6) LogPendingPayment-event when a vehicle used a route with no fee
+7) ReportExitRoad-Called by the exit booth
+8) GetPendingPaymentCount-returns the number of pending payments beacuase the price was unknown
+9) ClearSomePendingPayments-called by anyone if more than 1 payment was pending
+10) GetCollectedFeesAmount-current amount, goes to 0 after a call
+11) LogFeesCollected- logs event when owner collects the fees
+12) withdrawCollectedFees -called by owner of ocntract to withdraw collected fee
+
+*/
+
 pragma solidity ^0.5.1;
 contract TollBoothOperatorI {
 

@@ -1,3 +1,10 @@
+
+/*
+1) Logs when  paused is set
+2) Sets paused
+3) Gets/read paused
+*/
+
 pragma solidity ^0.5.1;
 
 contract PausableI {

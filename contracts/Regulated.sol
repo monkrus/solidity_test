@@ -1,3 +1,10 @@
+/*
+The regulated
+1) Defines condition of being regulated
+2) Sets regulator
+3) Gets regulator
+*/
+
 pragma solidity ^0.5.1;
 
 import "./interfaces/RegulatorI.sol";

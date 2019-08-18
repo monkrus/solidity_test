@@ -1,3 +1,10 @@
+/*
+1) Calls routePriceholder
+2) Sets route price
+3) Gets/reads route price
+*/
+
+
 pragma solidity ^0.5.1;
 
 import "./TollBoothHolder.sol";

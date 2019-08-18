@@ -1,3 +1,10 @@
+/*
+1) Logs route price set
+2) Sets route price
+3) Gets/read route price
+*/
+
+
 pragma solidity ^0.5.1;
 
 contract RoutePriceHolderI {

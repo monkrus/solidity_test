@@ -1,3 +1,10 @@
+
+/*
+1) Modifier when paused/when not paused
+2) Defines pausable
+3) Sets pausable
+4) Gets/read pausable
+*/
 pragma solidity ^0.5.1;
 
 import "./Owned.sol";

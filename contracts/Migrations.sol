@@ -1,3 +1,10 @@
+/*
+1) function migration????
+2) Checks for migration completion
+3) Checks for migration upgrade
+*/
+
+
 pragma solidity ^0.5.1;
 contract Migrations {
   address public owner;

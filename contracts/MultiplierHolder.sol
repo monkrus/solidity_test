@@ -1,3 +1,9 @@
+/*
+1) Call MultiplierHolder function
+2) Sets multiplier
+3) Gets/read multiplier
+*/
+
 pragma solidity ^0.5.1;
 
 import "./Owned.sol";

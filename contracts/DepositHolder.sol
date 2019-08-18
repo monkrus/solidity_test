@@ -1,3 +1,9 @@
+
+/*
+1) Defines deposit hoolder
+2) Sets deposit
+3) Gets/read deposit
+*/
 pragma solidity ^0.5.1;
 
 import "./Owned.sol";
