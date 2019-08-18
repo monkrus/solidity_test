@@ -1,6 +1,20 @@
+/* 1) Logs vehicle type setting event
+   2) Sets vehicle type
+   3) Gets/reads vehicle type
+
+   4) Logs creation/removal of tollbooth operator
+   5) Creates and removes tollbooth operator
+   6) Reads/tests who is  current operator 
+
+
+*/
+
+
 pragma solidity ^0.5.1;
 
 import "./TollBoothOperatorI.sol";
+
+
 
 contract RegulatorI {
 
