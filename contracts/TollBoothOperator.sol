@@ -14,7 +14,7 @@
 */
 
 
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.0;
 import "./Owned.sol";
 import "./Pausable.sol";
 import "./Regulated.sol";
@@ -24,7 +24,7 @@ import "./RoutePriceHolder.sol";
 import "./MultiplierHolder.sol";
 import "./interfaces/TollBoothOperatorI.sol";
 
-contract TollBoothOperator is TollBoothOperatorI, Owned, Pausable, Regulated, DepositHolder, MultiplierHolder, RoutePriceHolder {
+contract TollBoothOperatorContract is TollBoothOperatorI, Owned, Pausable, Regulated, DepositHolder, MultiplierHolder, RoutePriceHolder {
 
   uint collectedFees;
 

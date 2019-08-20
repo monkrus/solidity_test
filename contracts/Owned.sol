@@ -6,12 +6,12 @@
 */
 
 
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.0;
 
 import "./interfaces/OwnedI.sol";
 
 
-contract Owned is OwnedI {
+contract OwnedContract is OwnedI {
 
   address currOwner;
 

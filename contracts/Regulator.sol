@@ -11,7 +11,7 @@
 
 
 
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.0;
 
 import "./Owned.sol";
 import "./TollBoothOperator.sol";
@@ -21,7 +21,7 @@ import "./interfaces/RegulatorI.sol";
 
 
 
-contract Regulator is RegulatorI, Owned {
+contract RegulatorContract is RegulatorI, Owned {
 
   mapping(address => uint) vehicleTypes;
   mapping(address => bool) operatorsMap;

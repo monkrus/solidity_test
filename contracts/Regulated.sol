@@ -5,13 +5,13 @@ The regulated
 3) Gets regulator
 */
 
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.0;
 
 import "./interfaces/RegulatorI.sol";
 import "./interfaces/RegulatedI.sol";
 
 
-contract Regulated is RegulatedI {
+contract RegulateContract is RegulatedI {
 
   address previousRegulator;
 

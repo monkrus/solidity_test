@@ -4,7 +4,7 @@
 3) Gets/read deposit
 */
 
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.0;
 
 contract DepositHolderI {
 

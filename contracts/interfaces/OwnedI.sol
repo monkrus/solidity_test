@@ -5,12 +5,12 @@
 3) Gets/read owner
 */
 
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.0;
 
 import "../interfaces/OwnedI.sol";
 
 
-contract Owned is OwnedI {
+contract OwnedI {
 
   address currOwner;
 
@@ -19,7 +19,7 @@ contract Owned is OwnedI {
     _;
   }
 
-  function Owned() public {
+  function OwnedBy() public {
     currOwner = msg.sender;
   }
 

@@ -15,7 +15,7 @@ Called by contract when submitted a clear password by a toll booth
 
 */
 
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.0;
 contract TollBoothOperatorI {
 
     /**

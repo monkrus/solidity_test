@@ -5,13 +5,13 @@
 3) Sets pausable
 4) Gets/read pausable
 */
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.0;
 
 import "./Owned.sol";
 import "./interfaces/PausableI.sol";
 
 
-contract Pausable is PausableI, Owned {
+contract PausableContract is PausableI, Owned {
 
   bool paused;
 
