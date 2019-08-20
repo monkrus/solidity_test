@@ -1,3 +1,4 @@
+//Mock data for pausable
 pragma solidity ^0.5.1;
 
 import "../Pausable.sol";
