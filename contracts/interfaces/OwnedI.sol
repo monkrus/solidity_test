@@ -7,7 +7,7 @@
 
 pragma solidity ^0.5.1;
 
-import "./interfaces/OwnedI.sol";
+import "../interfaces/OwnedI.sol";
 
 
 contract Owned is OwnedI {
