@@ -4,7 +4,7 @@
    3) Gets/reads vehicle type
 
    4) Creates and removes tollbooth operator
-   5) Reads/tests who is  current operator 
+   5) Reads/tests who is  current operator
 
 
 */
@@ -40,7 +40,7 @@ contract Regulator is RegulatorI, Owned {
   }
 
   //better view, but the interface already used constant
-  function getVehicleType(address vehicle) constant public returns(uint vehicleType){
+  function getVehicleType(address vehicle) view public returns(uint vehicleType){
     return vehicleTypes[vehicle];
   }
 
@@ -63,7 +63,7 @@ contract Regulator is RegulatorI, Owned {
 
 
 
-  function isOperator(address operator) constant public returns(bool indeed){
+  function isOperator(address operator) view public returns(bool indeed){
     return operatorsMap[operator];
   }
 

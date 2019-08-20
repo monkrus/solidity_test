@@ -1,7 +1,7 @@
 pragma solidity ^0.5.1;
 
-import "./TollBoothHolder.sol";
-import "./interfaces/RoutePriceHolderI.sol";
+import "../TollBoothHolder.sol";
+import "../interfaces/RoutePriceHolderI.sol";
 
 
 contract RoutePriceHolder is RoutePriceHolderI, Owned, TollBoothHolder {
