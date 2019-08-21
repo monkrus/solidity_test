@@ -4,19 +4,19 @@
 3) Get/read route price
 */
 
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.0;
 
-import "./TollBoothHolder.sol";
 import "./interfaces/RoutePriceHolderI.sol";
+import "./interfaces/OwnedI.sol";
+import "./interfaces/TollBoothHolderI.sol";
 
-
-contract RoutePriceHolder is RoutePriceHolderI, Owned, TollBoothHolder {
+contract RoutePriceHolderContract is RoutePriceHolderI, OwnedI, TollBoothHolderI {
 
     mapping(address => mapping(address => uint)) routeMap;
 
     function RoutePriceHolder() public {}
 
-    function setRoutePrice(address entryBooth, address exitBooth, uint priceWeis) fromOwner   public returns(bool success){
+    function setRoutePrice(address entryBooth, address exitBooth, uint priceWeis) fromOwner public returns (bool success){
         require(entryBooth != exitBooth);
         require(entryBooth != 0 && exitBooth != 0);
         require(isTollBooth(entryBooth) && isTollBooth(exitBooth));
@@ -26,7 +26,7 @@ contract RoutePriceHolder is RoutePriceHolderI, Owned, TollBoothHolder {
         return true;
     }
 
-    function getRoutePrice(address entryBooth, address exitBooth) view public returns(uint priceWeis){
+    function getRoutePrice(address entryBooth, address exitBooth) view public returns (uint priceWeis){
         return routeMap[entryBooth][exitBooth];
     }
 

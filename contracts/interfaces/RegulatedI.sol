@@ -5,7 +5,7 @@
 
 */
 
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.0;
 
 import "./RegulatorI.sol";
 
@@ -33,16 +33,16 @@ contract RegulatedI {
      *     The new regulator.
      */
     function setRegulator(address newRegulator)
-        public
-        returns(bool success);
+    public
+    returns (bool success);
 
     /**
      * @return The current regulator.
      */
     function getRegulator()
-        view
-        public
-        returns(RegulatorI regulator);
+    view
+    public
+    returns (RegulatorI regulator);
 
     /*
      * You need to create:

@@ -1,11 +1,12 @@
 // sets route price
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.0;
 
-import "../TollBoothHolder.sol";
+import "../interfaces/TollBoothHolderI.sol";
+import "../interfaces/OwnedI.sol";
 import "../interfaces/RoutePriceHolderI.sol";
 
 
-contract RoutePriceHolder is RoutePriceHolderI, Owned, TollBoothHolder {
+contract RoutePriceHolderContract is RoutePriceHolderI, OwnedI, TollBoothHolderI {
 
     mapping(address => mapping(address => uint)) routeMap;
 

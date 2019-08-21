@@ -7,7 +7,7 @@
 */
 
 
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.0;
 
 contract TollBoothHolderI {
 
@@ -34,17 +34,17 @@ contract TollBoothHolderI {
      *     The address of the toll booth just added.
      */
     function addTollBooth(address tollBooth)
-        public
-        returns(bool success);
+    public
+    returns (bool success);
 
     /**
      * @param tollBooth The address of the toll booth we enquire about. It should accept a 0 address.
      * @return Whether the toll booth is indeed known to the holder.
      */
     function isTollBooth(address tollBooth)
-        view
-        public
-        returns(bool isIndeed);
+    view
+    public
+    returns (bool isIndeed);
 
     /**
      * Event emitted when a toll booth has been removed from the TollBoothOperator.
@@ -69,8 +69,8 @@ contract TollBoothHolderI {
      *     The address of the toll booth just removed.
      */
     function removeTollBooth(address tollBooth)
-        public
-        returns(bool success);
+    public
+    returns (bool success);
 
     /*
      * You need to create:
@@ -78,5 +78,5 @@ contract TollBoothHolderI {
      * - a contract named `TollBoothHolder` that:
      *     - is `OwnedI`, `TollBoothHolderI`.
      *     - has a constructor that takes no parameter.
-     */        
+     */
 }
