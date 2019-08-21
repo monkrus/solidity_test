@@ -44,4 +44,13 @@ contract OwnedI {
     {
         return currOwner;
     }
+
+    /**
+ * Event emitted when a new  has been set.
+ * @param currOwner ...
+ * @param newOwner ...
+ */
+    event LogOwnerSet(
+        address currOwner,
+        address newOwner);
 }
