@@ -9,7 +9,6 @@ pragma solidity ^0.5.0;
 import "./Owned.sol";
 import "./interfaces/MultiplierHolderI.sol";
 
-
 contract MultiplierHolderContract is MultiplierHolderI, OwnedI {
     mapping(uint => uint) vehicleTypesMap;
 

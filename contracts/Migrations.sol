@@ -4,7 +4,6 @@
 3) Checks for migration upgrade
 */
 
-
 pragma solidity ^0.5.0;
 
 contract Migrations {

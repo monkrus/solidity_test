@@ -20,7 +20,6 @@ import "./Owned.sol";
 import "./Pausable.sol";
 import "./Regulated.sol";
 import "./DepositHolder.sol";
-// import "./TollBoothHolder.sol";
 import "./RoutePriceHolder.sol";
 import "./MultiplierHolder.sol";
 import "./interfaces/TollBoothOperatorI.sol";
