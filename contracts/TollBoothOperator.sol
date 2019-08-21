@@ -40,7 +40,7 @@ contract TollBoothOperatorContract is TollBoothOperatorI, OwnedI, PausableI, Reg
     mapping(address => uint) cashBack;
 
     //Defining constructors as functions with the same name as the contract is deprecated. But i have problems in vagrant if tried to use "constructor" instead of function
-    function TollBoothOperator(bool isPaused, uint depositWeis, address regulator) Pausable(isPaused) Regulated(regulator) DepositHolder(depositWeis) public {}
+    function TollBoothOperator(bool isPaused, uint depositWeis, address regulator) PausableI(isPaused) RegulatedI(regulator) DepositHolderI(depositWeis) public {}
 
     //better view, but the interface already used constant
     function hashSecret(bytes32 secret)
