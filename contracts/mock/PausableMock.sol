@@ -1,9 +1,10 @@
 //Mock data for pausable
 pragma solidity ^0.5.0;
 
-import "../Pausable.sol";
+// import "./Pausable.sol";
+import "../interfaces/PausableI.sol";
 
-contract PausableMockContract is Pausable {
+contract PausableMockContract is PausableI {
 
     mapping(bool => uint) public counters;
 

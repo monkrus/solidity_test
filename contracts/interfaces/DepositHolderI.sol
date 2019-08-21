@@ -27,17 +27,17 @@ contract DepositHolderI {
      *     The new value that was set.
      */
     function setDeposit(uint depositWeis)
-        public
-        returns(bool success);
+    public
+    returns (bool success);
 
     /**
      * @return The base price, then to be multiplied by the multiplier, a given vehicle
      * needs to deposit to enter the road system.
      */
     function getDeposit()
-        view
-        public
-        returns(uint weis);
+    view
+    public
+    returns (uint weis);
 
     /*
      * You need to create:
@@ -46,5 +46,5 @@ contract DepositHolderI {
      *     - is `OwnedI`, and `DepositHolderI`.
      *     - has a constructor that takes:
      *         - one `uint` parameter, the initial deposit wei value, which cannot be 0.
-     */        
+     */
 }

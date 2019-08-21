@@ -1,4 +1,3 @@
-
 /*
 1) Logs when  paused is set
 2) Sets paused
@@ -25,12 +24,12 @@ contract PausableI {
      *     The sender of the action.
      *     The new state.
      */
-    function setPaused(bool newState) public returns(bool success);
+    function setPaused(bool newState) public returns (bool success);
 
     /**
      * @return Whether the contract is indeed paused.
      */
-    function isPaused() view public returns(bool isIndeed);
+    function isPaused() view public returns (bool isIndeed);
 
     /*
      * You need to create:

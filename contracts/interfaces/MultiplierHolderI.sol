@@ -36,10 +36,10 @@ contract MultiplierHolderI {
      *     The new multiplier that was set.
      */
     function setMultiplier(
-            uint vehicleType,
-            uint multiplier)
-        public
-        returns(bool success);
+        uint vehicleType,
+        uint multiplier)
+    public
+    returns (bool success);
 
     /**
      * @param vehicleType The type of vehicle whose multiplier we want
@@ -48,9 +48,9 @@ contract MultiplierHolderI {
      *     A 0 value indicates a non-existent multiplier.
      */
     function getMultiplier(uint vehicleType)
-        view
-        public
-        returns(uint multiplier);
+    view
+    public
+    returns (uint multiplier);
 
     /*
      * You need to create:
@@ -58,5 +58,5 @@ contract MultiplierHolderI {
      * - a contract named `MultiplierHolder` that:
      *     - is `OwnedI` and `MultiplierHolderI`.
      *     - has a constructor that takes no parameter.
-     */        
+     */
 }
