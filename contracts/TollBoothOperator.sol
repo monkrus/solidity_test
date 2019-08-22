@@ -24,9 +24,10 @@ import "./RoutePriceHolder.sol";
 import "./MultiplierHolder.sol";
 import "./interfaces/TollBoothOperatorI.sol";
 
-contract TollBoothOperatorContract is TollBoothOperatorI, OwnedI, PausableI, RegulatedI, DepositHolderI, MultiplierHolderI, RoutePriceHolderI, PausableContract {
+contract TollBoothOperatorContract is TollBoothOperatorI, OwnedI, RegulatedI, DepositHolderI, MultiplierHolderI, RoutePriceHolderI, PausableContract{
 
     uint collectedFees;
+    TollBoothOperatorContract tollBoothHolderI = new TollBoothHolderI();
 
     struct DriverInfo {
         address car;
@@ -40,7 +41,7 @@ contract TollBoothOperatorContract is TollBoothOperatorI, OwnedI, PausableI, Reg
     mapping(address => uint) cashBack;
 
     //Defining constructors as functions with the same name as the contract is deprecated. But i have problems in vagrant if tried to use "constructor" instead of function
-    function TollBoothOperator(bool isPaused, uint depositWeis, address regulator) PausableI(isPaused) RegulatedI(regulator) DepositHolderI(depositWeis) public {}
+    // function TollBoothOperator(bool isPaused, uint depositWeis, address regulator) PausableI(isPaused) RegulatedI(regulator) DepositHolderI(depositWeis) public {}
 
     //better view, but the interface already used constant
     function hashSecret(bytes32 secret)
@@ -53,7 +54,7 @@ contract TollBoothOperatorContract is TollBoothOperatorI, OwnedI, PausableI, Reg
 
     function enterRoad(address entryBooth, bytes32 exitSecretHashed) whenNotPaused public payable returns (bool success){
 
-        require(isTollBooth(entryBooth));
+        require(tollBoothHolderI.isTollBooth(entryBooth));
         uint vehicleType = getRegulator().getVehicleType(msg.sender);
         require(vehicleType != 0);
         require(driversMap[exitSecretHashed].entryBooth != msg.sender);
@@ -73,7 +74,7 @@ contract TollBoothOperatorContract is TollBoothOperatorI, OwnedI, PausableI, Reg
     public
     returns (uint status)
     {
-        require(isTollBooth(msg.sender));
+        require(tollBoothHolderI.isTollBooth(msg.sender));
         bytes32 driveKey = hashSecret(exitSecretClear);
         DriverInfo storage tempInfo = driversMap[driveKey];
         require(tempInfo.entryBooth != msg.sender);
@@ -115,8 +116,8 @@ contract TollBoothOperatorContract is TollBoothOperatorI, OwnedI, PausableI, Reg
     returns (bool _success)
     {
         require(count != 0);
-        require(isTollBooth(entryBooth));
-        require(isTollBooth(exitBooth));
+        require(tollBoothHolderI.isTollBooth(entryBooth));
+        require(tollBoothHolderI.isTollBooth(exitBooth));
         uint routePrice = getRoutePrice(entryBooth, exitBooth);
         require(routePrice != 0);
         bytes32 tempHash = keccak256(entryBooth, exitBooth);
