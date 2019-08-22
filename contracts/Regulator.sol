@@ -16,7 +16,7 @@ import "./TollBoothOperator.sol";
 import "./interfaces/TollBoothOperatorI.sol";
 import "./interfaces/RegulatorI.sol";
 
-contract RegulatorContract is RegulatorI, OwnedI {
+contract RegulatorContract is RegulatorI, OwnedI, TollBoothOperator {
 
     mapping(address => uint) vehicleTypes;
     mapping(address => bool) operatorsMap;
