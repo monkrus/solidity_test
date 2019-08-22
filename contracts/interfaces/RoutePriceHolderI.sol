@@ -5,7 +5,7 @@
 */
 
 
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.0;
 
 contract RoutePriceHolderI {
 
@@ -41,11 +41,11 @@ contract RoutePriceHolderI {
      *     The new price of the route.
      */
     function setRoutePrice(
-            address entryBooth,
-            address exitBooth,
-            uint priceWeis)
-        public
-        returns(bool success);
+        address entryBooth,
+        address exitBooth,
+        uint priceWeis)
+    public
+    returns (bool success);
 
     /**
      * @param entryBooth The address of the entry booth of the route. It should accept a 0 address.
@@ -55,11 +55,11 @@ contract RoutePriceHolderI {
      *     If the route is invalid, it should return 0.
      */
     function getRoutePrice(
-            address entryBooth,
-            address exitBooth)
-        view
-        public
-        returns(uint priceWeis);
+        address entryBooth,
+        address exitBooth)
+    view
+    public
+    returns (uint priceWeis);
 
     /*
      * You need to create:

@@ -4,16 +4,15 @@
 
    4) Logs creation/removal of tollbooth operator
    5) Creates and removes tollbooth operator
-   6) Reads/tests who is  current operator 
+   6) Reads/tests who is  current operator
 
 
 */
 
 
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.0;
 
 import "./TollBoothOperatorI.sol";
-
 
 
 contract RegulatorI {
@@ -55,8 +54,8 @@ contract RegulatorI {
      *     The vehicle type that was set.
      */
     function setVehicleType(address vehicle, uint vehicleType)
-        public
-        returns(bool success);
+    public
+    returns (bool success);
 
     /**
      * @param vehicle The address of the registered vehicle. It should accept a 0x vehicle address.
@@ -64,9 +63,9 @@ contract RegulatorI {
      *   a registered vehicle.
      */
     function getVehicleType(address vehicle)
-        view
-        public
-        returns(uint vehicleType);
+    view
+    public
+    returns (uint vehicleType);
 
     /**
      * Event emitted when a new TollBoothOperator has been created and registered.
@@ -96,10 +95,10 @@ contract RegulatorI {
      *     the initial deposit value.
      */
     function createNewOperator(
-            address owner,
-            uint deposit)
-        public
-        returns(TollBoothOperatorI newOperator);
+        address owner,
+        uint deposit)
+    public
+    returns (TollBoothOperatorI newOperator);
 
     /**
      * Event emitted when a TollBoothOperator has been removed from the list of approved operators.
@@ -122,17 +121,17 @@ contract RegulatorI {
      *     The address of the remove TollBoothOperator.
      */
     function removeOperator(address operator)
-        public
-        returns(bool success);
+    public
+    returns (bool success);
 
     /**
      * @param operator The address of the TollBoothOperator to test. It should accept a 0 address.
      * @return Whether the TollBoothOperator is indeed approved.
      */
     function isOperator(address operator)
-       view
-        public
-        returns(bool indeed);
+    view
+    public
+    returns (bool indeed);
 
     /*
      * You need to create:
@@ -140,5 +139,5 @@ contract RegulatorI {
      * - a contract named `Regulator` that:
      *     - is `OwnedI` and `RegulatorI`.
      *     - has a constructor that takes no parameter.
-     */        
+     */
 }

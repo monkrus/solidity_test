@@ -1,24 +1,23 @@
-
 /*
 1) Defines deposit hoolder
 2) Sets deposit
 3) Gets/read deposit
 */
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.0;
 
 import "./Owned.sol";
 import "./interfaces/DepositHolderI.sol";
 
-contract DepositHolder is DepositHolderI, Owned {
+contract DepositHolderContract is DepositHolderI, OwnedI {
 
     uint deposit;
 
-        function DepositHolder(uint depositWeis) public {
+    function DepositHolder(uint depositWeis) public {
         require(depositWeis > 0);
         deposit = depositWeis;
     }
 
-    function setDeposit(uint depositWeis) fromOwner public returns(bool _success){
+    function setDeposit(uint depositWeis) fromOwner public returns (bool _success){
         require(depositWeis != 0);
         require(depositWeis != deposit);
         deposit = depositWeis;
@@ -26,7 +25,7 @@ contract DepositHolder is DepositHolderI, Owned {
         return true;
     }
 
-    function getDeposit() view public returns(uint depositWeis){
+    function getDeposit() view public returns (uint depositWeis){
         return deposit;
     }
 }

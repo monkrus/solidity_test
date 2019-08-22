@@ -15,7 +15,8 @@ Called by contract when submitted a clear password by a toll booth
 
 */
 
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.0;
+
 contract TollBoothOperatorI {
 
     /**
@@ -27,9 +28,9 @@ contract TollBoothOperatorI {
      * @return the hashed secret.
      */
     function hashSecret(bytes32 secret)
-        view
-        public
-        returns(bytes32 hashed);
+    view
+    public
+    returns (bytes32 hashed);
 
     /**
      * Event emitted when a vehicle made the appropriate deposit to enter the road system.
@@ -54,7 +55,7 @@ contract TollBoothOperatorI {
      *     It should roll back if `entryBooth` is not a tollBooth.
      *     It should roll back if less than deposit * multiplier was sent alongside.
      *     It should roll back if `exitSecretHashed` has previously been used by anyone to enter.
-     *     It should be possible for a vehicle to enter "again" before it has exited from the 
+     *     It should be possible for a vehicle to enter "again" before it has exited from the
      *       previous entry.
      * @param entryBooth The declared entry booth by which the vehicle will enter the system.
      * @param exitSecretHashed A hashed secret that when solved allows the operator to pay itself.
@@ -66,11 +67,11 @@ contract TollBoothOperatorI {
      *     The amount deposited by the vehicle.
      */
     function enterRoad(
-            address entryBooth,
-            bytes32 exitSecretHashed)
-        public
-        payable
-        returns (bool success);
+        address entryBooth,
+        bytes32 exitSecretHashed)
+    public
+    payable
+    returns (bool success);
 
     /**
      * @param exitSecretHashed The hashed secret used by the vehicle when entering the road.
@@ -82,12 +83,12 @@ contract TollBoothOperatorI {
      * If no vehicles had ever entered with this hash, all values should be returned as `0`.
      */
     function getVehicleEntry(bytes32 exitSecretHashed)
-        view
-        public
-        returns(
-            address vehicle,
-            address entryBooth,
-            uint depositedWeis);
+    view
+    public
+    returns (
+        address vehicle,
+        address entryBooth,
+        uint depositedWeis);
 
     /**
      * Event emitted when a vehicle exits a road system.
@@ -137,8 +138,8 @@ contract TollBoothOperatorI {
      *       The exit booth of the vehicle trip.
      */
     function reportExitRoad(bytes32 exitSecretClear)
-        public
-        returns (uint status);
+    public
+    returns (uint status);
 
     /**
      * @param entryBooth the entry booth that has pending payments.
@@ -147,9 +148,9 @@ contract TollBoothOperatorI {
      * entry-exit pair was unknown.
      */
     function getPendingPaymentCount(address entryBooth, address exitBooth)
-        view
-        public
-        returns (uint count);
+    view
+    public
+    returns (uint count);
 
     /**
      * Can be called by anyone. In case more than 1 payment was pending when the oracle gave a price.
@@ -168,11 +169,11 @@ contract TollBoothOperatorI {
      *       The amount refunded to the vehicle.
      */
     function clearSomePendingPayments(
-            address entryBooth,
-            address exitBooth,
-            uint count)
-        public
-        returns (bool success);
+        address entryBooth,
+        address exitBooth,
+        uint count)
+    public
+    returns (bool success);
 
     /**
      * @return The amount that has been collected through successful payments. This is the current
@@ -180,9 +181,9 @@ contract TollBoothOperatorI {
      *   to `withdrawCollectedFees`.
      */
     function getCollectedFeesAmount()
-        view
-        public
-        returns(uint amount);
+    view
+    public
+    returns (uint amount);
 
     /**
      * Event emitted when the owner collects the fees.
@@ -204,8 +205,8 @@ contract TollBoothOperatorI {
      *     The amount collected.
      */
     function withdrawCollectedFees()
-        public
-        returns(bool success);
+    public
+    returns (bool success);
 
     /**
      * This function is commented out otherwise it prevents compilation of the completed contracts.

@@ -4,18 +4,17 @@
 3) Gets/read multiplier
 */
 
-pragma solidity ^0.5.1;
+pragma solidity ^0.5.0;
 
 import "./Owned.sol";
 import "./interfaces/MultiplierHolderI.sol";
 
-
-contract MultiplierHolder is MultiplierHolderI, Owned {
+contract MultiplierHolderContract is MultiplierHolderI, OwnedI {
     mapping(uint => uint) vehicleTypesMap;
 
-    function MultiplierHolder()  public {}
+    function MultiplierHolder() public {}
 
-    function setMultiplier(uint vehicleType, uint multiplier) fromOwner public returns(bool success){
+    function setMultiplier(uint vehicleType, uint multiplier) fromOwner public returns (bool success){
         require(vehicleType != 0);
         require(vehicleTypesMap[vehicleType] != multiplier);
         vehicleTypesMap[vehicleType] = multiplier;
@@ -23,7 +22,7 @@ contract MultiplierHolder is MultiplierHolderI, Owned {
         return true;
     }
 
-    function getMultiplier(uint vehicleType) view public returns(uint multiplier){
+    function getMultiplier(uint vehicleType) view public returns (uint multiplier){
         return vehicleTypesMap[vehicleType];
     }
 }
