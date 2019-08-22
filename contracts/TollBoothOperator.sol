@@ -24,7 +24,7 @@ import "./RoutePriceHolder.sol";
 import "./MultiplierHolder.sol";
 import "./interfaces/TollBoothOperatorI.sol";
 
-contract TollBoothOperatorContract is TollBoothOperatorI, OwnedI, PausableI, RegulatedI, DepositHolderI, MultiplierHolderI, RoutePriceHolderI {
+contract TollBoothOperatorContract is TollBoothOperatorI, OwnedI, PausableI, RegulatedI, DepositHolderI, MultiplierHolderI, RoutePriceHolderI, PausableContract {
 
     uint collectedFees;
 
