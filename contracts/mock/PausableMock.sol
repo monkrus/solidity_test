@@ -3,11 +3,14 @@ pragma solidity ^0.5.0;
 
 import "../interfaces/PausableI.sol";
 
+
 contract PausableMockContract is PausableI {
 
     mapping(bool => uint) public counters;
 
-    function PausableMock(bool paused) Pausable(paused) public {
+
+
+    function PausableMockI(bool paused) PausableI(paused) public {
     }
 
     function countUpWhenPaused()
